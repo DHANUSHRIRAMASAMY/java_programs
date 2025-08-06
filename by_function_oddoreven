@@ -1,0 +1,24 @@
+import java.util.Scanner;
+public class Main{
+String evenorodd(int num){
+  if(num%2==0)
+{
+    return ("Even");
+}
+  else
+{
+    return ("Odd");
+}
+}
+}
+public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int num=sc.nextInt();
+    Main obj=new Main();
+    obj.evenorodd(num);
+}
+_________________________________________________
+OUTPUT:
+5
+odd
+__________________________________________________
