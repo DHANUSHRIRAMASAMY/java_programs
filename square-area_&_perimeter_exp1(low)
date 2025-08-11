@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class Demo {
+
+	public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter a number:");
+			int a = sc.nextInt();
+			System.out.println("Area of a Square : " + a*a);
+			System.out.print("Perimeter of a square : " + 4*a);
+			
+		}
+	}
+_______________________________________________________________
+Test case 1:
+Enter the length of a side : 5	   
+output:
+Area of square : 25
+Perimeter of square : 20
+
+Test case 2:
+Enter the length of a side : 7   
+output:
+Area of square : 49
+Perimeter of square : 28
+
+Test case 3:
+Enter the length of a side : 6.5
+output:
+Area of square : 42
+Perimeter of square : 31
+__________________________________________________________________
