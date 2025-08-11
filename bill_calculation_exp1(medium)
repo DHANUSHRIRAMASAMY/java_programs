@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class TBills {
+	public static void main(String[] args) {
+			Scanner sc = new Scanner(System.in);
+			System.out.print("Enter no.of calls : ");
+			int calls = sc.nextInt();
+			double bill;
+			if(calls<=100)
+			{
+				bill=200;
+			}
+			else if(calls<=150)
+			{
+				bill=200 +(calls -100)*0.60;
+			}
+			else if(calls<=200)
+			{
+				bill=200 + (50*0.60) + (calls -150)*0.50;
+			}
+			else
+			{
+				bill=200 + (50*0.60) + (50*0.50) + (calls - 200)*0.40;
+			}
+			System.out.print("Your bill is Rs : "+ bill);
+			}
+		}
+_____________________________________________________________________
+Test Case:  1
+input:
+Enter number of calls: 90
+output:
+Your bill is Rs.200
+
+Test Case:  2
+input:
+Enter number of calls: 145
+output:
+Your bill is Rs.227
+
+Test Case:  3
+input:
+Enter number of calls: 190
+output:
+Your bill is Rs.250
+______________________________________________________________________
