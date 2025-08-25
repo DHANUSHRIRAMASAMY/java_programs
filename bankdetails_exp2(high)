@@ -1,0 +1,53 @@
+class Account {
+    int accno;
+    double balance;
+    Account() {
+        accno = 0;
+        balance = 0.0;
+    }
+    Account(int an) {
+        accno = an;
+        balance = 0.0;
+    }
+    Account(int an, double amt) {
+        accno = an;
+        balance = amt;
+    }
+    void read(int an) {
+        accno = an;
+        balance = 0.0;
+    }
+    void read(int an, double amt) {
+        accno = an;
+        balance = amt;
+    }
+    void print() {
+        System.out.println("Account No: " + accno + " | Balance: " + balance);
+    }
+}
+public class BankDetails {
+    public static void main(String args[]) {
+        Account a1 = new Account();             
+        Account a2 = new Account(1);            
+        Account a3 = new Account(2, 500.0);     
+        Account a4 = new Account();             
+        Account a5 = new Account();             
+
+        a4.read(2);             
+        a5.read(3, 600.0);      
+
+        a1.print();
+        a2.print();
+        a3.print();
+        a4.print();
+        a5.print();
+    }
+}
+___________________________________________________________________________________________________________
+OUTPUT:
+Account No: 0 | Balance: 0.0
+Account No: 1 | Balance: 0.0
+Account No: 2 | Balance: 500.0
+Account No: 2 | Balance: 0.0
+Account No: 3 | Balance: 600.0
+_____________________________________________________________________________________________________
