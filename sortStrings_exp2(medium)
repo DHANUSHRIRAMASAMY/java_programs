@@ -1,0 +1,47 @@
+import java.io.*;
+
+	class SortStrings {
+		 public static void main(String args[]) throws IOException {
+		       DataInputStream dis = new DataInputStream(System.in);
+		        String[] str = new String[5];
+
+		        // Get 5 strings from user
+		        for(int i = 0; i < 5; i++) {
+		            System.out.print("Enter string " + (i+1) + ": ");
+		            str[i] = dis.readLine();
+		        }
+
+		        // Sort strings using compareTo
+		        for(int i = 0; i < 5; i++) {
+		            for(int j = i+1; j < 5; j++) {
+		                if(str[i].compareTo(str[j]) > 0) {
+		                    String temp = str[i];
+		                    str[i] = str[j];
+		                    str[j] = temp;
+		                }
+		            }
+		        }
+
+		        // Display sorted list
+		        System.out.println("\nSorted Strings:");
+		        for(int i = 0; i < 5; i++) {
+		            System.out.println(str[i]);
+		        }
+		    }
+	}
+__________________________________________________________________________________
+INPUT:
+Enter string 1: mango
+Enter string 2: apple
+Enter string 3: banana
+Enter string 4: orange
+Enter string 5: grape
+
+OUTPUT:
+Sorted Strings:
+apple
+banana
+grape
+mango
+orange
+	
