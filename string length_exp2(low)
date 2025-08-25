@@ -1,0 +1,16 @@
+import java.io.*;
+
+class StringLength {
+    public static void main(String args[]) throws IOException {
+        DataInputStream dis = new DataInputStream(System.in);
+
+        System.out.print("Enter the string : ");
+        String str = dis.readLine();
+
+        System.out.println("Length of the given string is : " + str.length());
+    }
+}
+______________________________________________________________________________________
+OUTPUT:
+Enter the string : object oriented
+Length of the given string is : 15
