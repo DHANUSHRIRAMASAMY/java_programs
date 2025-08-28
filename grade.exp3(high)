@@ -1,0 +1,115 @@
+Abstract Class: Assessment
+abstract class Assessment {
+    // Concrete method
+    public void getAssessmentDetails() {
+        System.out.println("This is an academic assessment.");
+    }
+
+    // Abstract methods
+    public abstract void conduct();
+    public abstract void grade();
+}
+
+2. Interfaces
+interface OnlineAccessible {
+    void accessOnline();
+}
+
+interface AutoGrading {
+    void performAutoGrading();
+}
+
+3. Subclasses Implementing Abstract Class + Interfaces
+📄 WrittenExam
+class WrittenExam extends Assessment {
+    public void conduct() {
+        System.out.println("Conducting a written exam in classroom.");
+    }
+
+    public void grade() {
+        System.out.println("Grading written exam manually.");
+    }
+}
+
+💻 CodingTest
+class CodingTest extends Assessment implements OnlineAccessible, AutoGrading {
+    public void conduct() {
+        System.out.println("Conducting coding test online.");
+    }
+
+    public void grade() {
+        performAutoGrading(); // Use auto-grading
+    }
+
+    public void accessOnline() {
+        System.out.println("Coding test is accessible online.");
+    }
+
+    public void performAutoGrading() {
+        System.out.println("Auto-grading the coding test.");
+    }
+}
+
+🎤 OralPresentation
+class OralPresentation extends Assessment implements OnlineAccessible {
+    public void conduct() {
+        System.out.println("Conducting oral presentation in class or via video call.");
+    }
+
+    public void grade() {
+        System.out.println("Grading oral presentation manually.");
+    }
+
+    public void accessOnline() {
+        System.out.println("Oral presentation can be done online.");
+    }
+}
+
+4. AssessmentManager (Polymorphic Runner)
+public class AssessmentManager {
+    public static void main(String[] args) {
+        // Array of assessments (base class reference)
+        Assessment[] assessments = {
+            new WrittenExam(),
+            new CodingTest(),
+            new OralPresentation()
+        };
+
+        // Run each assessment polymorphically
+        for (Assessment a : assessments) {
+            System.out.println("\n--- Assessment Details ---");
+            a.getAssessmentDetails();
+            a.conduct();
+            a.grade();
+
+            // Check for online access
+            if (a instanceof OnlineAccessible) {
+                ((OnlineAccessible) a).accessOnline();
+            }
+
+            // Check for auto grading
+            if (a instanceof AutoGrading) {
+                ((AutoGrading) a).performAutoGrading();
+            }
+        }
+    }
+}
+
+✅ Sample Output
+--- Assessment Details ---
+This is an academic assessment.
+Conducting a written exam in classroom.
+Grading written exam manually.
+
+--- Assessment Details ---
+This is an academic assessment.
+Conducting coding test online.
+Auto-grading the coding test.
+Coding test is accessible online.
+Auto-grading the coding test.
+
+--- Assessment Details ---
+This is an academic assessment.
+Conducting oral presentation in class or via video call.
+Grading oral presentation manually.
+Oral presentation can be done online.
