@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class StringLength {
+    public static void main(String[] args) {
+        String userString;
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a string: ");
+        userString = scanner.nextLine();
+        int length = userString.length();
+        System.out.println("The length of the string is: " + length);
+        scanner.close();
+    }
+}
+___________________________________________________________________________
+OUTPUT:
+SAMPLE OUTPUT:
+Enter a string: Hello World
+The length of the string is: 11
+
+Enter a string: Java Programming
+The length of the string is: 16
+
+Enter a string: 12345
+The length of the string is: 5
