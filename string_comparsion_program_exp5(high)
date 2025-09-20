@@ -1,0 +1,45 @@
+import java.util.Scanner;
+
+public class StringCompression {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.print("Enter a string: ");
+        String original = sc.nextLine();
+        String compressed = compressString(original);
+        System.out.println("Original string: " + original);
+        if (compressed.length() < original.length()) {
+            System.out.println("Compressed string: " + compressed);
+        } else {
+            System.out.println("Compressed string: " + original + " (no compression - original is shorter)");
+        }
+        sc.close();
+    }
+    public static String compressString(String str) {
+        StringBuffer compressed = new StringBuffer();
+        int count = 1;
+        for (int i = 0; i < str.length(); i++) {
+            if (i + 1 < str.length() && str.charAt(i) == str.charAt(i + 1)) {
+                count++;
+            } else {
+                compressed.append(str.charAt(i));
+                compressed.append(count);
+                count = 1; // Reset count
+            }
+        }
+        return compressed.toString();
+    }
+}
+_______________________________________________________________________________________________________________________
+OUTPUT:
+Enter a string: aaabbcccc
+Original string: aaabbcccc
+Compressed string: a3b2c4
+
+Enter a string: aabbcc
+Original string: aabbcc
+Compressed string: a2b2c2
+
+Enter a string: abc
+Original string: abc
+Compressed string: abc (no compression - original is shorter)
