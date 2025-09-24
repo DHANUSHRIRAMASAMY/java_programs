@@ -1,0 +1,133 @@
+//enumSet
+import java.util.*;
+ enum Day
+ {
+     MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY,SATURDAY,SUNDAY;
+ }
+ class e1
+     {
+         Day today=Day.MONDAY;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	      e1 week = new e1() ;
+		   System.out.println( week.today);
+	    }
+	}
+}
+}
+__________________________________________________________________________=
+
+//Hashset
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	     HashSet<Integer> h=new HashSet<>();
+	     h.add(10);
+	     h.add(20);
+	     h.add(30);
+	     h.add(40);
+	     h.add(50);
+	    
+		   System.out.println(h);
+		   h.remove(50);
+		   System.out.println(h);
+		   System.out.println(h.contains(30));
+		   System.out.println(h.clone());
+		   System.out.println(h.clone());
+		   System.out.println(h.clone());
+	    }
+	    }
+	}
+_________________________________________________________________________
+
+//TreeSet
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	     TreeSet<Integer> h=new TreeSet<>();
+	     h.add(60);
+	     h.add(70);
+	     h.add(80);
+	     h.add(90);
+	     h.add(50);
+	    
+		   System.out.println(h);
+		   h.remove(60);
+		   System.out.println(h);
+		   System.out.println(h.contains(80));
+		   System.out.println(h.clone());
+		   System.out.println(h.clone());
+		   System.out.println(h.clone());
+	    }
+	    }
+	}
+________________________________________________________________________
+
+//HashMap 
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	     HashMap<Integer,String> h=new HashMap<>();
+	     h.put(1,"SIBI");
+	     h.put(2,"DHANU");
+	     h.put(3,"VANI");
+	     h.put(4,"RAMU");
+	     h.put(5,"ELAN");
+	     h.put(null,"Hello");
+	     h.put(null,"World");
+	     h.put(6,"null");
+		   System.out.println(h);
+	    }
+	    }
+	}
+_________________________________________________________________________
+
+//LinkedHashMap
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	     LinkedHashMap<Integer,String> h=new LinkedHashMap<>();
+	     h.put(1,"SIBI");
+	     h.put(2,"DHANU");
+	     h.put(3,"VANI");
+	     h.put(4,"RAMU");
+	     h.put(5,"ELAN");
+	     h.put(null,"Hello");
+	     h.put(null,"World");
+	     h.put(6,"null");
+		   System.out.println(h);
+	    }
+	    }
+	}
+____________________________________________________________________________
+
+//treeMAP
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    {
+	 TreeMap<Integer,String> h=new TreeMap<>();
+	     h.put(1,"SIBI");
+	     h.put(2,"DHANU");
+	     h.put(3,"VANI");
+	     h.put(4,"RAMU");
+	     h.put(5,"ELAN");
+	     h.put(8,"Hello");
+	     h.put(9,"World");
+	     h.put(6,"null");
+		 System.out.println(h);
+	    }
+	    }
+	}
+
