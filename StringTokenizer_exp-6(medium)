@@ -1,0 +1,62 @@
+import java.util.StringTokenizer;
+public class SimpleTokenizer {
+    public static void main(String[] args) {
+        System.out.println("String 1: 12/34/56/78/90/00");
+        System.out.println("Delimiter: /");
+        StringTokenizer st1 = new StringTokenizer("12/34/56/78/90/00", "/");
+        System.out.println("Tokens: " + st1.countTokens());
+        while (st1.hasMoreTokens()) {
+            System.out.println(st1.nextToken());
+        }        
+        System.out.println("\n---------------------------\n");
+        System.out.println("String 2: www.java.io.stringtokenizer.parsestring");
+        System.out.println("Delimiter: .");
+        StringTokenizer st2 = new StringTokenizer("www.java.io.stringtokenizer.parsestring", ".");
+        System.out.println("Tokens: " + st2.countTokens());
+        while (st2.hasMoreTokens()) {
+            System.out.println(st2.nextToken());
+        }        
+        System.out.println("\n---------------------------\n");
+        System.out.println("String 3: Parse the following string using stringTokenizer methods");
+        System.out.println("Delimiter: space (default)");
+        StringTokenizer st3 = new StringTokenizer("Parse the following string using stringTokenizer methods");
+        System.out.println("Tokens: " + st3.countTokens());
+        while (st3.hasMoreTokens()) {
+            System.out.println(st3.nextToken());
+        }
+    }
+}
+______________________________________________________________________________________________________________________
+String 1: 12/34/56/78/90/00
+Delimiter: /
+Tokens: 6
+12
+34
+56
+78
+90
+00
+
+---------------------------
+
+String 2: www.java.io.stringtokenizer.parsestring
+Delimiter: .
+Tokens: 5
+www
+java
+io
+stringtokenizer
+parsestring
+
+---------------------------
+
+String 3: Parse the following string using stringTokenizer methods
+Delimiter: space (default)
+Tokens: 6
+Parse
+the
+following
+string
+using
+stringTokenizer
+methods
