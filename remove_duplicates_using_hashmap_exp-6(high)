@@ -1,0 +1,57 @@
+import java.util.*;
+public class WordFrequencyCounter {
+    public static void main(String[] args) {
+        String sentence = "hello world hello java world programming java is fun programming is great";
+        
+        System.out.println("Original Sentence:");
+        System.out.println(sentence);
+        System.out.println("\n" + "=".repeat(60) + "\n");
+        processAndDisplayResults(sentence);
+    }
+    public static void processAndDisplayResults(String sentence) {
+        String[] words = sentence.toLowerCase().split("\\s+");
+        Map<String, Integer> wordFrequency = new HashMap<>();
+        
+        for (String word : words) {
+            wordFrequency.put(word, wordFrequency.getOrDefault(word, 0) + 1);
+        }
+        System.out.println("Word Frequency Count:");
+        System.out.println("-".repeat(60));
+        for (Map.Entry<String, Integer> entry : wordFrequency.entrySet()) {
+            System.out.printf("%-20s : %d time(s)%n", entry.getKey(), entry.getValue());
+        }
+        LinkedHashSet<String> uniqueWords = new LinkedHashSet<>();
+        for (String word : words) {
+            if (wordFrequency.get(word) == 1) {
+                uniqueWords.add(word);
+            }
+        }
+        String reconstructedSentence = String.join(" ", uniqueWords);    
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("\nUnique Words (appearing only once):");
+        System.out.println("-".repeat(60));
+        if (uniqueWords.isEmpty()) {
+            System.out.println("No unique words found!");
+        } else {
+            int count = 1;
+            for (String word : uniqueWords) {
+                System.out.println(count++ + ". " + word);
+            }
+        }        
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("\nReconstructed Sentence (Unique Words Only):");
+        System.out.println("-".repeat(60));
+        if (reconstructedSentence.isEmpty()) {
+            System.out.println("(Empty - no unique words)");
+        } else {
+            System.out.println(reconstructedSentence);
+        }
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("\nSummary:");
+        System.out.println("-".repeat(60));
+        System.out.println("Total words in original sentence: " + words.length);
+        System.out.println("Distinct words: " + wordFrequency.size());
+        System.out.println("Unique words (appearing once): " + uniqueWords.size());
+        System.out.println("Duplicate words: " + (wordFrequency.size() - uniqueWords.size()));
+    }
+}
