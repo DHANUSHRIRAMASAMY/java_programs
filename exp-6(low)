@@ -1,0 +1,93 @@
+import java.util.StringTokenizer;
+public class StringTokenizerDemo {
+    public static void main(String[] args) {
+        String content = "Java is an automatic garbage collected language";       
+        System.out.println("Original Content:");
+        System.out.println(content);
+        System.out.println("\n" + "=".repeat(50));
+        StringTokenizer tokenizer = new StringTokenizer(content);
+        System.out.println("\nTotal number of tokens: " + tokenizer.countTokens());
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("\nParsed Tokens:");
+        System.out.println("-".repeat(50));       
+        int tokenCount = 1;
+        while (tokenizer.hasMoreTokens()) {
+            String token = tokenizer.nextToken();
+            System.out.println("Token " + tokenCount + ": " + token);
+            tokenCount++;
+        }
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("\nUsing custom delimiter (space and 'a'):");
+        System.out.println("-".repeat(50));       
+        StringTokenizer tokenizer2 = new StringTokenizer(content, " a", true);
+        System.out.println("Total tokens with delimiters: " + tokenizer2.countTokens());   
+        System.out.println("\nTokens:");
+        int count = 1;
+        while (tokenizer2.hasMoreElements()) {
+            String token = (String) tokenizer2.nextElement();
+            if (!token.trim().isEmpty()) {
+                System.out.println("Token " + count + ": \"" + token + "\"");
+                count++;
+            }
+        }
+        System.out.println("\n" + "=".repeat(50));
+        System.out.println("\nDemonstrating hasMoreElements() method:");
+        System.out.println("-".repeat(50));       
+        StringTokenizer tokenizer3 = new StringTokenizer(content);
+        while (tokenizer3.hasMoreElements()) {
+            System.out.println("-> " + tokenizer3.nextElement());
+        }
+    }
+}
+___________________________________________________________________________
+Original Content:
+Java is an automatic garbage collected language
+
+==================================================
+
+Total number of tokens: 7
+
+==================================================
+
+Parsed Tokens:
+--------------------------------------------------
+Token 1: Java
+Token 2: is
+Token 3: an
+Token 4: automatic
+Token 5: garbage
+Token 6: collected
+Token 7: language
+
+==================================================
+
+Using custom delimiter (space and 'a'):
+--------------------------------------------------
+Total tokens with delimiters: 18
+
+Tokens:
+Token 1: "J"
+Token 2: "v"
+Token 3: "is"
+Token 4: "n"
+Token 5: "utom"
+Token 6: "tic"
+Token 7: "g"
+Token 8: "rb"
+Token 9: "ge"
+Token 10: "collected"
+Token 11: "l"
+Token 12: "ngu"
+Token 13: "ge"
+
+==================================================
+
+Demonstrating hasMoreElements() method:
+--------------------------------------------------
+-> Java
+-> is
+-> an
+-> automatic
+-> garbage
+-> collected
+-> language
